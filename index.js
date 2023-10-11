@@ -60,8 +60,10 @@ function convertToCSV(jsonData, includeHeaders = true) {
 }
 
 function generateDateRange() {
-  const startDate = new Date(2023, 8, 24); // Month is 0-based, so 8 is September
-  const endDate = new Date(2021, 0, 1); // 0 is January
+  const today = new Date();
+  today.setDate(today.getDate() - 2);
+  const startDate = new Date(today); // Month is 0-based, so 8 is September
+  const endDate = new Date(2023, 0, 1); // 0 is January
 
   let currentDate = startDate;
   const dates = [];
